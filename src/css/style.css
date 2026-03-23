@@ -1,0 +1,37 @@
+body {
+    color: #999;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    background-color: #86726c;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    gap: 1px;
+}
+
+.cell {
+    background-color: #c4a27a;   
+    border: 2px solid #8b5a2b;   
+    border-radius: 8px;          
+    cursor: pointer;             
+    transition: all 0.2s ease;  
+
+    display: flex;           
+    align-items: center;     
+    justify-content: center;
+}
+
+.cell img {
+    width: 80%;
+    height: auto;
+
+    object-fit: contain;
+}
