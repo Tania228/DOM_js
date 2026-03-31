@@ -4,11 +4,14 @@ import imgGoblin from '../img/goblin.png';
 
 const container = document.querySelector('.container');
 
-for (let i = 0; i < 16; i++) {
+const COUNTER = 16
+const TIME = 1000
+
+for (let i = 0; i < COUNTER; i++) {
     const cell = document.createElement('div');
     cell.className = 'cell';
     cell.setAttribute('cell-index', i);
-    container.appendChild(cell);
+    container.append(cell);
 }
 
 
@@ -19,19 +22,25 @@ goblin.alt = 'Goblin'
 const cells = document.querySelectorAll('.cell');
 
 const startIndex = Math.floor(Math.random() * 16);
-cells[startIndex].appendChild(goblin);
+cells[startIndex].append(goblin);
 console.log(`Гоблин появился в ячейке ${startIndex}`);
 
-setInterval(() => {
+let interval = setInterval(() => {
     const currCell =goblin.parentElement;
     let newCell;
     do {
         newCell = cells[Math.floor(Math.random() * 16)];
     } while (newCell === currCell);
 
-    newCell.appendChild(goblin);
+    newCell.append(goblin);
 
     const currIndex = [...cells].indexOf(currCell);
     const newIndex = [...cells].indexOf(newCell);
     console.log(`Гоблин переместился из ${currIndex} в ${newIndex}`);
-}, 1000);
+}, TIME);
+
+goblin.addEventListener('click', () => {
+    clearInterval(interval); 
+    interval = null;
+    alert('Поймал! Игра окончена.');
+});
