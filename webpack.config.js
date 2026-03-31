@@ -2,13 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // ВАЖНО: правильный путь к вашему главному JS файлу
-  entry: './src/index.js',  // если ваш файл называется app.js
+  entry: './src/index.js',  
     
     output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true, // очищает dist перед каждой сборкой
+    clean: true, 
     },
     
     module: {
@@ -26,7 +25,7 @@ module.exports = {
 
     plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // путь к вашему HTML
+      template: './src/index.html', 
         filename: 'index.html',
     }),
     ],
@@ -37,7 +36,7 @@ module.exports = {
     },
     port: 8080,
     open: true,
-    hot: true, // Hot Module Replacement
+    hot: true,
     },
 
     mode: 'development',
