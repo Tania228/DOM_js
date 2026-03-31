@@ -23,7 +23,6 @@ const cells = document.querySelectorAll('.cell');
 
 const startIndex = Math.floor(Math.random() * 16);
 cells[startIndex].append(goblin);
-console.log(`Гоблин появился в ячейке ${startIndex}`);
 
 let interval = setInterval(() => {
     const currCell =goblin.parentElement;
@@ -36,11 +35,10 @@ let interval = setInterval(() => {
 
     const currIndex = [...cells].indexOf(currCell);
     const newIndex = [...cells].indexOf(newCell);
-    console.log(`Гоблин переместился из ${currIndex} в ${newIndex}`);
 }, TIME);
 
 goblin.addEventListener('click', () => {
     clearInterval(interval); 
     interval = null;
-    alert('Поймал! Игра окончена.');
+    alert('Поймал! Игра окончена. Для возобновления игры перезагрузите страницу.');
 });
