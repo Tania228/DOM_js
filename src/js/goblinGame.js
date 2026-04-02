@@ -40,8 +40,6 @@ export default class GoblinGame {
                 newCell = cells[Math.floor(Math.random() * this.counter)];
             } while (newCell === currCell);
             newCell.append(goblin);
-            const currIndex = [...cells].indexOf(currCell);
-            const newIndex = [...cells].indexOf(newCell);
         }, this.time);
 
         goblin.addEventListener('click', () => {
