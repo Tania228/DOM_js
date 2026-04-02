@@ -21,7 +21,7 @@ body {
     background-color: #c4a27a;   
     border: 2px solid #8b5a2b;   
     border-radius: 8px;          
-    cursor: pointer;             
+    cursor: url('../img/hammer64.png') 16 16, pointer;             
     transition: all 0.2s ease;  
 
     display: flex;           
